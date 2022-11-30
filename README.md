@@ -1,0 +1,2 @@
+# FSD-base
+Project initialisation.
