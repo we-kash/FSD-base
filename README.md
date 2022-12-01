@@ -145,3 +145,6 @@ So these are my 10 most-used git commands that I come across in my daily program
 If you want to learn more about web development, feel free to follow me on Youtube!
 
 Thank you for reading!
+
+
+  Day 2
