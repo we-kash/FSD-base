@@ -1,10 +1,34 @@
-const express=require('express');
-const app=express();
-const appe=express();
-const path=require('path');
-appe.use('/product',res);
-app.use('/',(req,res,next)=>{
-    res.sendFile(path.join(__dirname,"success.html"));
+const express = require('express');
+const path = require('path');
+const bodyParser = require('body-parser');
+const knex = require('knex');
+
+const db = knex({
+    client: 'pg',
+    connection: {
+        host: '127.0.0.1',
+        user: 'postgres',
+        password: 'test',
+        database: 'loginformytvideo'
+    }
 })
 
-app.listen(3000);
+const app = express();
+
+let intialPath = path.join(__dirname, "public");
+
+app.use(bodyParser.json());
+app.use(express.static(intialPath));
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(intialPath, "index.html"));
+})
+
+app.get('/login', (req, res) => {
+    res.sendFile(path.join(intialPath, "login.html"));
+})
+
+app.get('/register', (req, res) => {
+    res.sendFile(path.join(intialPath, "register.html"));
+})
+
