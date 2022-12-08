@@ -1,4 +1,4 @@
-const greeting = document.querySelector('.greeting');
+const greeting = document.querySelector('.greeting');//home page description
 
 window.onload = () => {
     if(!sessionStorage.name){
